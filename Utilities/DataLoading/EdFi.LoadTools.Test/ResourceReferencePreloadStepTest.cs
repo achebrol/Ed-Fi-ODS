@@ -38,7 +38,7 @@ namespace EdFi.LoadTools.Test
         }
 
         [SetUp]
-        public void Initialize()
+        public void Setup()
         {
             _cache = new TestXmlReferenceCache();
             _findStep = new FindReferencesStep(_cache);

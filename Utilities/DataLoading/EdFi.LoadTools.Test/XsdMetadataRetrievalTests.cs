@@ -27,7 +27,7 @@ namespace EdFi.LoadTools.Test
             protected virtual XsdMetadataFactory Factory => new XsdMetadataFactory(ssBuilder.GetSchemaSet());
 
             [SetUp]
-            public virtual void Initialize()
+            public virtual void Setup()
             {
                 _metadata = Factory.GetMetadata();
             }

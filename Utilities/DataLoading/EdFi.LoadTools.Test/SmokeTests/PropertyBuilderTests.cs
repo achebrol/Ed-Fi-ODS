@@ -20,8 +20,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
     [TestFixture]
     public class PropertyBuilderTests
     {
-#region ExistingResourceBuilder tests
-
         [Test]
         public void ExistingResourceBuilder_should_copy_resource()
         {
@@ -46,9 +44,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.IsNotNull(obj.class2Property1);
         }
 
-#endregion
-
-#region ListPropertyBuilder tests
 
         [Test]
         public void ListPropertyBuilder_should_create_empty_list_when_required_is_true()
@@ -69,9 +64,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.AreEqual(0, obj.listProperty1.Count);
         }
 
-#endregion
-
-#region ReferencePropertyBuilder tests
 
         [Test]
         public void ReferencePropertyBuilder_should_build_reference()
@@ -98,9 +90,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.AreEqual(5, obj.class2ReferenceProperty.intProperty);
         }
 
-#endregion
-
-#region StringPropertyBuilder tests
 
         [Test]
         public void StringPropertyBuilder_should_set_string_properties()
@@ -121,9 +110,7 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.AreEqual(6, obj.stringProperty1.Length);
         }
 
-#endregion
 
-#region TimeStringPropertyBuilder tests
 
         [Test]
         public void TimeStringPropertyBuilder_should_set_string_properties()
@@ -149,9 +136,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
                     CultureInfo.CurrentCulture, DateTimeStyles.None, out result));
         }
 
-#endregion
-
-#region UniqueIdPropertyBuilder tests
 
         [Test]
         public void UniqueIdPropertyBuilder_should_generate_a_value()
@@ -163,9 +147,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.IsFalse(string.IsNullOrEmpty(obj.testUniqueId));
         }
 
-#endregion
-
-#region DateTimePropertyBuilder tests
 
         [Test]
         public void DateTimePropertyBuilder_should_generate_a_value_for_a_required_property()
@@ -201,7 +182,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.AreEqual(obj.dateTimeProperty1, default(DateTime));
         }
 
-#endregion
 
         private class Class1
         {
@@ -251,8 +231,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             public string ShortDescription { get; set; }
         }
 
-#region IgnorePropertyBuilder tests
-
         [Test]
         public void IgnorePropertyBuilder_should_ignore_id_property()
         {
@@ -282,10 +260,6 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.IsTrue(builder.BuildProperty(obj, propInfo));
             Assert.IsNull(obj.link);
         }
-
-#endregion
-
-#region SimplePropertyBuilder
 
         [Test]
         public void SimplePropertyBuilder_should_ignore_nullable_properties()
@@ -340,7 +314,5 @@ namespace EdFi.LoadTools.Test.SmokeTests
             Assert.IsTrue(builder.BuildProperty(obj, propInfo));
             Assert.AreEqual(default(int?), obj.nullableProperty1);
         }
-
-#endregion
     }
 }

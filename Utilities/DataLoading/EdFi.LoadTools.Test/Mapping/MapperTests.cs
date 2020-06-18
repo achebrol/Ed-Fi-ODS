@@ -15,8 +15,6 @@ namespace EdFi.LoadTools.Test.Mapping
     [TestFixture]
     public class MapperTests
     {
-#region StaffJson
-
         private const string StaffJson = @"{
     ""id"": ""81c35732eb2249f9a496ebc6153a2dbb"",
     ""staffUniqueId"": ""207288"",
@@ -62,8 +60,6 @@ namespace EdFi.LoadTools.Test.Mapping
     ""visas"": [],
     ""_etag"": ""635696331693100000""
   }";
-
-#endregion
 
         [Test]
         public void MappingTests_should_resolve_properties()
